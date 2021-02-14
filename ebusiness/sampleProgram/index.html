@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amazon Game review searcher</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+    .contact{/*背景*/
+      display: flex;
+      flex-direction: column;
+    	background-color: #003344;
+      padding-top:100px;
+    }
+    .header{/*ヘッダー*/
+      background-color:#131921;
+      display:inline-block;
+      width: 100%;
+      position: fixed;
+        top: 0px;
+    	left: 0px;
+      text-align: left;
+      z-index: 3;
+    }
+    .header h2{/*AmazonReviw serch*/
+      display: inline-block;
+    }
+    .orange{/*AmazonReviw serch*/
+      color:#e47911;
+      padding-left:40px;
+    }
+    .white{/*AmazonReviw serch*/
+      color:#FFFFFF;
+      padding-right:40px;
+    }
+    form{/*再検索窓*/
+      display: inline-block;
+    }
+    .search_container{
+      box-sizing: border-box;
+    }
+    .search_container input[type="text"]{
+      border: none;
+      height: 35px;
+      width:400px;
+      border-radius:4px 0 0 4px;
+    }
+    .search_container input[type="text"]:focus{
+      outline: 0px;
+    }
+    .search_container input[type="submit"]{
+      font-family: FontAwesome;
+      cursor: pointer;
+      border: none;
+      background: #febd69;
+      color: #fff;
+      outline : none;
+      width: 3.0em;
+      height: 37px;
+      border-radius:0 4px 4px 0;
+    }
+    body{
+      margin:0px;
+      background-color:#0f171e;
+      color:#FFFFFF;
+    }
+    </style>
+</head>
+<body>
+<div id="contact">
+  <div class="header">
+    <h2 class="orange">Amazon</h2><h2 class="white">Review search</h2>
+    <form action="/cgi-bin/pyCGI.py" method="post"class="search_container">
+      <input type="text" id ="word" name="word"size="25"><input class="button1" name="submit" type="submit"value="&#xf002">
+    </form>
+  </div>
+</div>
+</body>
+</html>

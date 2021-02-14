@@ -1,0 +1,13 @@
+select * from game_reviews where 
+product_id in (
+	select product_id from (
+	select * from game_reviews where user_id in (
+		select user_id from game_reviews group by user_id having count(product_id)>100
+	) ) as r 
+	group by product_id having count(user_id)>5 )
+and user_id in 
+(
+	select user_id from game_reviews group by user_id having count(product_id)>100
+)
+
+1011

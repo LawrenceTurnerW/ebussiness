@@ -1,0 +1,17 @@
+CSV information:  
+row[0]: userId
+row[1]:productId
+row[2]:userName
+row[3]:totalVotes
+row[4]:helpfulVotes
+row[5]:reviewText
+row[6]:rating
+row[7]:summary
+row[8]: reviewTime
+
+step1: use the "cd" command to change to work directory.  for example, your current work directory is "d:\project"
+->  d:    enter
+-> cd d:\project enter
+
+step2: Run the server:
+python -m http.server --cgi 8080
