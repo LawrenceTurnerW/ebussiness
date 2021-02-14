@@ -375,10 +375,10 @@ for o in omomi:
 	<div class = "game_score_box">
     <img class="gameimg"src="../CSS/img/game_img"""+o[1][2:3]+""".jpg">
       <div class="gametitle">
-        <p>ゲームタイトル:"""+o[0]+"""</p>
+        <p>GameTitle : """+o[0]+"""</p>
       </div>
       <div class="score">
-        <p>score:"""+o[1][:4]+"""</p>
+        <p>score : """+o[1][:4]+"""</p>
       </div>
     </div>
     </div>
