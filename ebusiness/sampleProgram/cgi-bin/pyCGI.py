@@ -221,15 +221,29 @@ margin-top:8px;
 }
 .tab_review{
   position:fixed;
-    top:17px;
-    right:410px;
+    top:21px;
+    left:850px;
   z-index:4;
 }
 .tab_gametitle{
   position:fixed;
-    top:17px;
-    right:210px;
+    top:21px;
+    left:1050px;
   z-index:4;
+}
+@media screen and (min-width: 1400px) {
+  .tab_review{
+    position:fixed;
+      top:21px;
+      left:1250px;
+    z-index:4;
+  }
+  .tab_gametitle{
+    position:fixed;
+      top:21px;
+      left:1450px;
+    z-index:4;
+  }
 }
 .tab_item:hover {
   opacity: 0.75;
@@ -259,7 +273,29 @@ input[name="tab_item"] {
 .gametitle_base{
   margin-top:50px;
 }
+.sanretu{
+  float:left;
+  width:33.3333333%;
+  background-color: #003344;
 
+}
+.game_score_box{
+    width:300px;
+    background-color: #131921;
+    text-align:center;
+    margin-top:10px;
+    display:table;
+    position: relative;
+    margin:10px auto;
+}
+.gameimg{
+  padding-top:30px;
+  width:100px;
+  height:150px;
+}
+.background{
+  background-color: #003344;
+}
 </style>
 </head>
 <body>
@@ -306,7 +342,7 @@ for rev in reList:
         <span class="star5_rating" data-rate="""+rev.rating+"""></span><p>"""+rev.reviewTime+"""</p>
       </div>
       <div class="gametitle">
-        <p>ゲームタイトル : """+rev.productId+"""</p>
+        <p>GameTitle : """+rev.productId+"""</p>
       </div>
       <div class="grad-wrap">
         <input id="trigger"""+rev.summary+"""" class="grad-trigger" type="checkbox">
@@ -315,11 +351,8 @@ for rev in reList:
         </div>
       </div>
     </div>
-</table>
-    """
+</table>"""
     html_body_result+=html_body_rev
-
-
 
 html_body_after="""
 </div>
@@ -329,17 +362,37 @@ html_body_after="""
 <div class="tab_content" id="gametitle_content">
   <div class="tab_content_description">
     <p class="c-txtsp">ここにも文字無いと動かないわ、なんだこれ</p>
-    <div class="gametitle_base">
+    <div class="gametitle_base">"""
 
+html_gamedata_result="""
+<h1>[ """+word+""" ]に関連した商品のスコアを表示します！</h1>
+<div class="background">
+"""
+for o in omomi:
+    html_gamedata_rev="""
+<table border="0">
+  <div class="sanretu">
+	<div class = "game_score_box">
+    <img class="gameimg"src="../CSS/img/game_img"""+o[1][2:3]+""".jpg">
+      <div class="gametitle">
+        <p>ゲームタイトル:"""+o[0]+"""</p>
+      </div>
+      <div class="score">
+        <p>score:"""+o[1][:4]+"""</p>
+      </div>
+    </div>
+    </div>
+</table>"""
+    html_gamedata_result+=html_gamedata_rev
+
+html_body_after_tow="""
     </div>
   </div>
 </div>
 </div>
-
+</div>
 </body>
-</html>
-
-"""
+</html>"""
 
 
-print(html_body_prev+html_body_result+html_body_after)
+print(html_body_prev+html_body_result+html_body_after+html_gamedata_result+html_body_after_tow)
