@@ -11,9 +11,11 @@ form = cgi.FieldStorage()
 word = form.getvalue('word','')
 print(word)
 address="C:/Users/Takafumi/git/ebusiness/ebusiness/dataset/gameDataCSV.csv"
-result=csvHandler.readCsv(address)
-searchRe=csvHandler.searchRevByWord(result,word)
+#result=csvHandler.readCsv(address)
+searchRe=csvHandler.searchRevByWord(word,address)
 reList=csvHandler.generateReviews(searchRe)
+name=csvHandler.searchName(searchRe)
+omomi=csvHandler.reviewHandler(name)
 
 print('Content-Type: text/html; charset=UTF-8\n')
 html_body_prev = """
