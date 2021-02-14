@@ -25,6 +25,9 @@ html_body_prev = """
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <title>Document</title>
 <style>
+html{
+background-color: #003344;
+}
 .contact{/*背景*/
   display: flex;
   flex-direction: column;
@@ -310,7 +313,7 @@ input[name="tab_item"] {
   <input id="review" type="radio" name="tab_item" checked>
   <label class="tab_item tab_review" for="review"><p>レビュー</p></label>
   <input id="gametitle" type="radio" name="tab_item">
-  <label class="tab_item tab_gametitle" for="gametitle"><p>ゲームデータ</p></label>
+  <label class="tab_item tab_gametitle" for="gametitle"><p>ゲームスコア</p></label>
   <div class="tab_content" id="review_content">
     <div class="tab_content_description">
       <p class="c-txtsp">なんか知らんけどここに文字がないと動かない！見つけた人はラッキーだよ！</p>
